@@ -43,7 +43,7 @@ class ModelsDiagram < AppDiagram
 
 
   def extract_class_name(filename)
-    filename.split('/').last.camelize.chomp(".rb")
+    filename.sub(%r{^.*app/models/}, '').chomp(".rb").camelize
   end
 
   
